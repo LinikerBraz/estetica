@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configuração básica do documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro - Estética</title>
+    <!-- Link para o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container principal da aplicação -->
+    <div class="container">
+        <!-- Cabeçalho da aplicação -->
+        <header class="header">
+            <h1>💅 Controle Financeiro Estética</h1>
+            <p>Gerencie seus atendimentos e acompanhe seus lucros</p>
+        </header>
+
+        <!-- Seção principal com formulário e resumo -->
+        <main class="main-content">
+            <!-- Formulário para adicionar novos atendimentos -->
+            <section class="form-section">
+                <h2>Novo Atendimento</h2>
+                <form id="attendanceForm" class="attendance-form">
+                    <!-- Campo para nome do cliente -->
+                    <div class="form-group">
+                        <label for="clientName">Nome do Cliente:</label>
+                        <input 
+                            type="text" 
+                            id="clientName" 
+                            name="clientName" 
+                            required 
+                            placeholder="Digite o nome do cliente"
+                        >
+                    </div>
+
+                    <!-- Campo para valor cobrado -->
+                    <div class="form-group">
+                        <label for="chargedValue">Valor Cobrado (R$):</label>
+                        <input 
+                            type="number" 
+                            id="chargedValue" 
+                            name="chargedValue" 
+                            step="0.01" 
+                            min="0" 
+                            required 
+                            placeholder="0,00"
+                        >
+                    </div>
+
+                    <!-- Campo para custo do serviço -->
+                    <div class="form-group">
+                        <label for="serviceCost">Custo do Serviço (R$):</label>
+                        <input 
+                            type="number" 
+                            id="serviceCost" 
+                            name="serviceCost" 
+                            step="0.01" 
+                            min="0" 
+                            required 
+                            placeholder="0,00"
+                        >
+                    </div>
+
+                    <!-- Botão para adicionar atendimento -->
+                    <button type="submit" class="btn btn-primary">
+                        ✨ Adicionar Atendimento
+                    </button>
+                </form>
+            </section>
+
+            <!-- Seção com resumo financeiro -->
+            <section class="summary-section">
+                <h2>Resumo Financeiro</h2>
+                <div class="summary-cards">
+                    <!-- Card com total arrecadado -->
+                    <div class="summary-card revenue">
+                        <div class="card-icon">💰</div>
+                        <div class="card-content">
+                            <h3>Total Arrecadado</h3>
+                            <p id="totalRevenue">R$ 0,00</p>
+                        </div>
+                    </div>
+
+                    <!-- Card com total de custos -->
+                    <div class="summary-card costs">
+                        <div class="card-icon">💸</div>
+                        <div class="card-content">
+                            <h3>Total de Custos</h3>
+                            <p id="totalCosts">R$ 0,00</p>
+                        </div>
+                    </div>
+
+                    <!-- Card com lucro total -->
+                    <div class="summary-card profit">
+                        <div class="card-icon">📈</div>
+                        <div class="card-content">
+                            <h3>Lucro Total</h3>
+                            <p id="totalProfit">R$ 0,00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Seção com tabela de atendimentos -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>Atendimentos Registrados</h2>
+                <!-- Botão para limpar todos os dados -->
+                <button id="clearDataBtn" class="btn btn-danger">
+                    🗑️ Limpar Dados da Semana
+                </button>
+            </div>
+
+            <!-- Container da tabela com scroll horizontal -->
+            <div class="table-container">
+                <table id="attendanceTable" class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Data/Hora</th>
+                            <th>Cliente</th>
+                            <th>Valor Cobrado</th>
+                            <th>Custo</th>
+                            <th>Lucro</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTableBody">
+                        <!-- Os dados serão inseridos aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mensagem exibida quando não há dados -->
+            <div id="emptyMessage" class="empty-message">
+                <p>📋 Nenhum atendimento registrado ainda.</p>
+                <p>Adicione seu primeiro atendimento usando o formulário acima!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

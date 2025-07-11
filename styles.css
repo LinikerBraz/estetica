@@ -1,0 +1,432 @@
+/* Reset básico e configurações globais */
+* {
+  margin: 0; /* Remove margem padrão de todos os elementos */
+  padding: 0; /* Remove padding padrão de todos os elementos */
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+/* Configuração do corpo da página */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e legível */
+  background: linear-gradient(135deg, #ffeef8 0%, #f0e6ff 100%); /* Gradiente suave rosa/lilás */
+  min-height: 100vh; /* Altura mínima da viewport */
+  color: #4a4a4a; /* Cor do texto principal */
+  line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* Container principal da aplicação */
+.container {
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+  padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilos do cabeçalho */
+.header {
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 40px; /* Espaçamento inferior */
+  padding: 30px 20px; /* Espaçamento interno */
+  background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+}
+
+/* Título principal */
+.header h1 {
+  font-size: 2.5rem; /* Tamanho da fonte */
+  color: #8b5a96; /* Cor roxa suave */
+  margin-bottom: 10px; /* Espaçamento inferior */
+  font-weight: 700; /* Peso da fonte */
+}
+
+/* Subtítulo do cabeçalho */
+.header p {
+  font-size: 1.1rem; /* Tamanho da fonte */
+  color: #666; /* Cor cinza */
+  font-weight: 400; /* Peso da fonte */
+}
+
+/* Layout principal com grid */
+.main-content {
+  display: grid; /* Layout em grid */
+  grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+  gap: 30px; /* Espaçamento entre colunas */
+  margin-bottom: 40px; /* Espaçamento inferior */
+}
+
+/* Seções do formulário e resumo */
+.form-section,
+.summary-section {
+  background: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+}
+
+/* Títulos das seções */
+.form-section h2,
+.summary-section h2,
+.table-section h2 {
+  font-size: 1.5rem; /* Tamanho da fonte */
+  color: #8b5a96; /* Cor roxa */
+  margin-bottom: 20px; /* Espaçamento inferior */
+  font-weight: 600; /* Peso da fonte */
+}
+
+/* Grupos de campos do formulário */
+.form-group {
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Labels dos campos */
+.form-group label {
+  display: block; /* Exibe como bloco */
+  margin-bottom: 8px; /* Espaçamento inferior */
+  font-weight: 500; /* Peso da fonte */
+  color: #555; /* Cor cinza escuro */
+}
+
+/* Campos de entrada */
+.form-group input {
+  width: 100%; /* Largura total */
+  padding: 12px 16px; /* Espaçamento interno */
+  border: 2px solid #e1d5e7; /* Borda roxa clara */
+  border-radius: 12px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: all 0.3s ease; /* Transição suave */
+  background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+}
+
+/* Estado de foco dos campos */
+.form-group input:focus {
+  outline: none; /* Remove outline padrão */
+  border-color: #8b5a96; /* Cor da borda no foco */
+  box-shadow: 0 0 0 3px rgba(139, 90, 150, 0.1); /* Sombra de foco */
+  background: rgba(255, 255, 255, 1); /* Fundo opaco no foco */
+}
+
+/* Estilos base dos botões */
+.btn {
+  padding: 12px 24px; /* Espaçamento interno */
+  border: none; /* Remove borda padrão */
+  border-radius: 12px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: all 0.3s ease; /* Transição suave */
+  display: inline-flex; /* Layout flexível inline */
+  align-items: center; /* Alinha itens ao centro */
+  gap: 8px; /* Espaçamento entre elementos */
+}
+
+/* Botão primário (adicionar) */
+.btn-primary {
+  background: linear-gradient(135deg, #8b5a96, #a569bd); /* Gradiente roxo */
+  color: white; /* Texto branco */
+  width: 100%; /* Largura total */
+  justify-content: center; /* Centraliza conteúdo */
+}
+
+/* Estado hover do botão primário */
+.btn-primary:hover {
+  background: linear-gradient(135deg, #7d4e87, #9b59b6); /* Gradiente mais escuro */
+  transform: translateY(-2px); /* Eleva o botão */
+  box-shadow: 0 8px 25px rgba(139, 90, 150, 0.3); /* Sombra mais intensa */
+}
+
+/* Botão de perigo (limpar dados) */
+.btn-danger {
+  background: linear-gradient(135deg, #e74c3c, #c0392b); /* Gradiente vermelho */
+  color: white; /* Texto branco */
+}
+
+/* Estado hover do botão de perigo */
+.btn-danger:hover {
+  background: linear-gradient(135deg, #d62c1a, #a93226); /* Gradiente mais escuro */
+  transform: translateY(-2px); /* Eleva o botão */
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3); /* Sombra vermelha */
+}
+
+/* Botão de exclusão individual */
+.btn-delete {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52); /* Gradiente vermelho suave */
+  color: white; /* Texto branco */
+  padding: 6px 12px; /* Espaçamento menor */
+  font-size: 0.8rem; /* Fonte menor */
+}
+
+/* Estado hover do botão de exclusão */
+.btn-delete:hover {
+  background: linear-gradient(135deg, #ff5252, #e53935); /* Gradiente mais intenso */
+  transform: scale(1.05); /* Aumenta ligeiramente */
+}
+
+/* Container dos cards de resumo */
+.summary-cards {
+  display: grid; /* Layout em grid */
+  gap: 15px; /* Espaçamento entre cards */
+}
+
+/* Cards individuais do resumo */
+.summary-card {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha itens ao centro */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Transição de transformação */
+}
+
+/* Efeito hover nos cards */
+.summary-card:hover {
+  transform: translateY(-3px); /* Eleva o card */
+}
+
+/* Card de receita */
+.summary-card.revenue {
+  background: linear-gradient(135deg, #2ecc71, #27ae60); /* Gradiente verde */
+  color: white; /* Texto branco */
+}
+
+/* Card de custos */
+.summary-card.costs {
+  background: linear-gradient(135deg, #f39c12, #e67e22); /* Gradiente laranja */
+  color: white; /* Texto branco */
+}
+
+/* Card de lucro */
+.summary-card.profit {
+  background: linear-gradient(135deg, #3498db, #2980b9); /* Gradiente azul */
+  color: white; /* Texto branco */
+}
+
+/* Ícones dos cards */
+.card-icon {
+  font-size: 2rem; /* Tamanho do ícone */
+  margin-right: 15px; /* Espaçamento à direita */
+}
+
+/* Conteúdo dos cards */
+.card-content h3 {
+  font-size: 0.9rem; /* Tamanho da fonte do título */
+  margin-bottom: 5px; /* Espaçamento inferior */
+  opacity: 0.9; /* Transparência leve */
+}
+
+/* Valores dos cards */
+.card-content p {
+  font-size: 1.4rem; /* Tamanho da fonte do valor */
+  font-weight: 700; /* Peso da fonte */
+  margin: 0; /* Remove margem */
+}
+
+/* Seção da tabela */
+.table-section {
+  background: rgba(255, 255, 255, 0.95); /* Fundo semi-transparente */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+}
+
+/* Cabeçalho da tabela */
+.table-header {
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Espaça elementos */
+  align-items: center; /* Alinha ao centro */
+  margin-bottom: 20px; /* Espaçamento inferior */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  gap: 15px; /* Espaçamento entre elementos */
+}
+
+/* Container da tabela com scroll */
+.table-container {
+  overflow-x: auto; /* Scroll horizontal quando necessário */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+/* Estilos da tabela */
+.attendance-table {
+  width: 100%; /* Largura total */
+  border-collapse: collapse; /* Remove espaços entre bordas */
+  background: white; /* Fundo branco */
+  min-width: 700px; /* Largura mínima para scroll */
+}
+
+/* Cabeçalho da tabela */
+.attendance-table thead {
+  background: linear-gradient(135deg, #8b5a96, #a569bd); /* Gradiente roxo */
+  color: white; /* Texto branco */
+}
+
+/* Células do cabeçalho */
+.attendance-table th {
+  padding: 15px 12px; /* Espaçamento interno */
+  text-align: left; /* Alinhamento à esquerda */
+  font-weight: 600; /* Peso da fonte */
+  font-size: 0.9rem; /* Tamanho da fonte */
+}
+
+/* Células do corpo da tabela */
+.attendance-table td {
+  padding: 12px; /* Espaçamento interno */
+  border-bottom: 1px solid #f0f0f0; /* Borda inferior */
+  font-size: 0.9rem; /* Tamanho da fonte */
+}
+
+/* Linhas alternadas da tabela */
+.attendance-table tbody tr:nth-child(even) {
+  background-color: #fafafa; /* Fundo cinza claro */
+}
+
+/* Efeito hover nas linhas */
+.attendance-table tbody tr:hover {
+  background-color: #f5f0f8; /* Fundo roxo claro */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Mensagem quando não há dados */
+.empty-message {
+  text-align: center; /* Centraliza o texto */
+  padding: 60px 20px; /* Espaçamento interno */
+  color: #888; /* Cor cinza */
+}
+
+/* Primeiro parágrafo da mensagem vazia */
+.empty-message p:first-child {
+  font-size: 1.2rem; /* Tamanho maior */
+  margin-bottom: 10px; /* Espaçamento inferior */
+  font-weight: 500; /* Peso da fonte */
+}
+
+/* Segundo parágrafo da mensagem vazia */
+.empty-message p:last-child {
+  font-size: 1rem; /* Tamanho normal */
+  opacity: 0.8; /* Transparência */
+}
+
+/* Classe para ocultar elementos */
+.hidden {
+  display: none !important; /* Força ocultação */
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  /* Layout em coluna única */
+  .main-content {
+    grid-template-columns: 1fr; /* Uma coluna */
+    gap: 20px; /* Espaçamento reduzido */
+  }
+
+  /* Reduz espaçamento do container */
+  .container {
+    padding: 15px; /* Espaçamento menor */
+  }
+
+  /* Ajusta título principal */
+  .header h1 {
+    font-size: 2rem; /* Fonte menor */
+  }
+
+  /* Reduz espaçamento das seções */
+  .form-section,
+  .summary-section,
+  .table-section {
+    padding: 20px; /* Espaçamento menor */
+  }
+
+  /* Cabeçalho da tabela em coluna */
+  .table-header {
+    flex-direction: column; /* Layout em coluna */
+    align-items: stretch; /* Estica elementos */
+  }
+
+  /* Botão de limpar em largura total */
+  .table-header .btn {
+    width: 100%; /* Largura total */
+    justify-content: center; /* Centraliza conteúdo */
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  /* Ajusta título para celular */
+  .header h1 {
+    font-size: 1.8rem; /* Fonte ainda menor */
+  }
+
+  /* Reduz espaçamento do cabeçalho */
+  .header {
+    padding: 20px 15px; /* Espaçamento menor */
+    margin-bottom: 30px; /* Margem menor */
+  }
+
+  /* Cards de resumo em coluna única */
+  .summary-cards {
+    gap: 12px; /* Espaçamento menor */
+  }
+
+  /* Ajusta cards para celular */
+  .summary-card {
+    padding: 15px; /* Espaçamento menor */
+  }
+
+  /* Ícones menores */
+  .card-icon {
+    font-size: 1.5rem; /* Tamanho menor */
+    margin-right: 12px; /* Margem menor */
+  }
+
+  /* Valores menores nos cards */
+  .card-content p {
+    font-size: 1.2rem; /* Fonte menor */
+  }
+
+  /* Ajusta tabela para celular */
+  .attendance-table {
+    min-width: 600px; /* Largura mínima menor */
+    font-size: 0.8rem; /* Fonte menor */
+  }
+
+  /* Células menores */
+  .attendance-table th,
+  .attendance-table td {
+    padding: 8px 6px; /* Espaçamento menor */
+  }
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0; /* Inicia transparente */
+    transform: translateY(30px); /* Inicia deslocado para baixo */
+  }
+  to {
+    opacity: 1; /* Termina opaco */
+    transform: translateY(0); /* Termina na posição original */
+  }
+}
+
+/* Aplica animação aos elementos principais */
+.header,
+.form-section,
+.summary-section,
+.table-section {
+  animation: fadeInUp 0.6s ease-out; /* Animação de entrada */
+}
+
+/* Atraso na animação para criar efeito cascata */
+.form-section {
+  animation-delay: 0.1s; /* Atraso de 0.1s */
+}
+
+.summary-section {
+  animation-delay: 0.2s; /* Atraso de 0.2s */
+}
+
+.table-section {
+  animation-delay: 0.3s; /* Atraso de 0.3s */
+}
